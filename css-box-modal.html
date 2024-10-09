@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS - Box Model</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box1 {
+        background-color: rgb(234, 237, 237);
+        margin: 25px;
+        padding: 25px;
+        border: 2px solid black;
+        width: max-content;
+      }
+      .box2 {
+        background-color: aqua;
+        color: rgb(8, 39, 181);
+        margin: 25px;
+        padding: 10px;
+        border: 2px solid black;
+        width: 500px;
+      }
+
+      .box3 {
+        background-color: rgb(121, 129, 234);
+        color: rgb(215, 5, 5);
+        margin: 25px;
+        padding: 10px;
+        border: 2px solid black;
+        box-sizing: border-box;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>An Example of CSS Box Model</h1>
+    <div class="box1">
+      Hi, I am Box 1 with max content width and no box sizing property
+      <div class="box2">
+        Hi, I am Box 2 with no box sizing property and fixed width 500 px
+        <div class="box3">
+          Hi, I am BOX 3 with box sizing border box with 400 px width
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
