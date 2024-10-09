@@ -9,3 +9,5 @@
 <p>Learned about Forms, Action Types, & different types of Input available in HTML</p>
 <h2>Day 4</h2>
 <p>Learned about semantic tags, seo related topics, media tags like video and audio, Inline & Block elements, html enties and a basic exercise</p>
+<h2>Day 5</h2>
+<p>Learned Semantic Tags and HTML main topics wraps up here</p>
