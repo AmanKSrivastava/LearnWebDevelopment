@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div,
+      span {
+        border: 2px solid black;
+        margin: 25px;
+
+        /* ignore top and bottom margin */
+        padding: 55px;
+        /* padding top does not works on inline element 
+        to fix dis we can use display as inline-block
+        */
+        width: 400px;
+      }
+      div,
+      span {
+        display: inline-block;
+      }
+      /* #main{
+
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- <div id="main"> -->
+    <div class="div1">I am div 1</div>
+    <div class="div2">I am div 2</div>
+    <span class="span1"> I am span 1 </span>
+    <span class="span2"> I am span 2 </span>
+    <!-- </div> -->
+  </body>
+</html>
