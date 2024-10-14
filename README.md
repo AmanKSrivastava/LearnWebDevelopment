@@ -26,3 +26,7 @@
 <p>display: inline-block</p>
 <p>display: none</p>
 <p>visibility: hidden</p>
+<h2>Day 3</h2>
+<p>CSS Shadow, Outline, Box & Text Shadow</p>
+<p>CSS Overflow</p>
+<p>CSS Position Property</p>
