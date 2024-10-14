@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Cards</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e5ecf1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .cards {
+        border-radius: 10px;
+        margin: auto;
+        width: 350px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .cardBody {
+        padding: 10px;
+        position: relative;
+      }
+      .tag {
+        background-color: #e0e7ef;
+        color: #4a79a3;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        margin-right: 5px;
+      }
+      .tags {
+        position: absolute;
+        top: 5px;
+      }
+      .read-more {
+        background-color: #b2d9fc;
+        border: none;
+        padding: 10px 20px;
+        color: #1c4f80;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 20px;
+        position: relative;
+        bottom: 20px;
+        left: 90px;
+      }
+      .image {
+        padding: 5px;
+      }
+      .image img {
+        border-radius: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cards">
+      <div class="image">
+        <img src="./assets/sample.jpg" width="100%" />
+      </div>
+      <div class="cardBody">
+        <div class="tags">
+          <span class="tag">Nature</span>
+          <span class="tag">Lake</span>
+        </div>
+        <h2>Lago di Braies</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit eveniet
+          molestiae distinctio praesentium sint explicabo harum tempora
+          repellat. Officiis corrupti mollitia veritatis, voluptatibus, tempora
+          cumque ea harum tenetur nisi numquam dicta! Odio, corrupti beatae.
+        </p>
+        <button class="read-more">Read More</button>
+      </div>
+    </div>
+  </body>
+</html>

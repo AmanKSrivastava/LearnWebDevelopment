@@ -30,3 +30,7 @@
 <p>CSS Shadow, Outline, Box & Text Shadow</p>
 <p>CSS Overflow</p>
 <p>CSS Position Property</p>
+<h2>Day 4</h2>
+<p>CSS Cards</p>
+<p>CSS Variables</p>
+<p>CSS Media Queries</p>
