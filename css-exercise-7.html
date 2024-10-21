@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css-exercise-grids</title>
+  </head>
+  <style>
+    :root {
+      --card-32-button-color: #5cb85b;
+      --card-64-button-color: rgb(70, 155, 204);
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .nav-links ul {
+      gap: 20px;
+      display: flex;
+      list-style: none;
+      text-decoration: none;
+    }
+    .nav-link a {
+      text-decoration: none;
+      color: black;
+    }
+    .nav-link {
+      display: flex;
+    }
+
+    .download-text {
+      font-size: 45px;
+      font-style: normal;
+      font-weight: 100;
+    }
+    .download-text span {
+      font-weight: 900;
+    }
+
+    .container {
+      text-align: center;
+      font-size: 22px;
+      width: 60vw;
+    }
+    .main-section {
+      display: flex;
+      justify-content: center;
+    }
+    .download-button {
+      background-color: #08a6bd;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 6px;
+      font-weight: 600;
+      margin-top: 25px;
+      position: relative;
+    }
+
+    .language-text {
+      margin-top: 5%;
+      display: flex;
+      font-size: 14px;
+
+      column-gap: 15px;
+    }
+    .language-text span {
+      font-size: 22px;
+    }
+
+    .language-cards {
+      margin-top: 2%;
+      width: 58vw;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .cards {
+      height: 25vh;
+      width: 18.5vw;
+      background-color: #e4dede;
+      border-radius: 5px;
+    }
+
+    .cards a {
+      text-decoration: none;
+    }
+
+    .cards button {
+      cursor: pointer;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    .bit32 {
+      background-color: var(--card-32-button-color);
+    }
+
+    .bit64 {
+      background-color: var(--card-64-button-color);
+    }
+
+    .encryption-text {
+      font-size: 10px;
+    }
+    .other-text {
+      font-size: 8px;
+    }
+  </style>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="#">
+          <img
+            src="./assets/UE-Logo-1.webp"
+            alt="Ultra Edit Logo"
+            width="150px"
+            srcset=""
+        /></a>
+      </div>
+
+      <nav class="nav-links">
+        <ul>
+          <li class="nav-link">
+            <a href="#">Products</a>
+            <span
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 9L11.2929 14.2929C11.6262 14.6262 11.7929 14.7929 12 14.7929C12.2071 14.7929 12.3738 14.6262 12.7071 14.2929L18 9"
+                  stroke="#141B34"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </li>
+          <li class="nav-link">
+            <a href="#">For business</a
+            ><span
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 9L11.2929 14.2929C11.6262 14.6262 11.7929 14.7929 12 14.7929C12.2071 14.7929 12.3738 14.6262 12.7071 14.2929L18 9"
+                  stroke="#141B34"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </li>
+          <li class="nav-link">
+            <a href="#">Resources</a
+            ><span
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 9L11.2929 14.2929C11.6262 14.6262 11.7929 14.7929 12 14.7929C12.2071 14.7929 12.3738 14.6262 12.7071 14.2929L18 9"
+                  stroke="#141B34"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </li>
+          <li class="nav-link">
+            <a href="#">Support</a
+            ><span
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 9L11.2929 14.2929C11.6262 14.6262 11.7929 14.7929 12 14.7929C12.2071 14.7929 12.3738 14.6262 12.7071 14.2929L18 9"
+                  stroke="#141B34"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </li>
+          <li class="nav-link">
+            <a href="#">Our Company</a
+            ><span
+              ><svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 9L11.2929 14.2929C11.6262 14.6262 11.7929 14.7929 12 14.7929C12.2071 14.7929 12.3738 14.6262 12.7071 14.2929L18 9"
+                  stroke="#141B34"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </li>
+          <li class="nav-link">
+            <a href="#"
+              ><img
+                src="./assets//google-transalte.png"
+                alt="Google Transalte Logo"
+                srcset=""
+                width="20"
+            /></a>
+          </li>
+          <li class="nav-link">
+            <a href="#">
+              <img
+                src="./assets/search-icon.png"
+                alt="Search Icon"
+                width="20"
+                srcset=""
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-section">
+      <div class="container">
+        <p class="download-text">
+          Download <span>UltraEdit</span> for Windows
+          <img src="./assets//Reviews.png" alt="Review Text" />
+        </p>
+        <p>
+          Download and try UltraEdit before you buy it! This download includes
+          the full Windows version of the text editor.
+        </p>
+        <div class="download-section">
+          <button class="download-button">DOWNLOAD MAC OR LINUX VERSION</button>
+        </div>
+
+        <div class="language-text">
+          <img src="./assets/UE-logo-2.png" alt="" srcset="" width="70" />
+          <p>
+            <span> Download UltraEdit</span> v2024.1(released 2024-08-27) |
+            Hotfix information (2024-08-18)
+          </p>
+        </div>
+
+        <div class="language-cards">
+          <div class="cards grid-1">
+            <h5>English</h5>
+
+            <a href="#" target="_blank">
+              <button class="bit32">Download 32-bit</button>
+            </a>
+
+            <a href="#" target="_blank">
+              <button class="bit64">Download 64-bit</button>
+            </a>
+
+            <p class="encryption-text">SHA256</p>
+
+            <p class="other-text">
+              3C783C0872319DE70343C2C79D9E0024FDA3F1DB472B8F1119343
+            </p>
+            <p class="other-text">D42190AAD8C</p>
+          </div>
+          <div class="cards">
+            <h5>English</h5>
+
+            <a href="#" target="_blank">
+              <button class="bit32">Download 32-bit</button>
+            </a>
+
+            <a href="#" target="_blank">
+              <button class="bit64">Download 64-bit</button>
+            </a>
+
+            <p class="encryption-text">SHA256</p>
+
+            <p class="other-text">
+              3C783C0872319DE70343C2C79D9E0024FDA3F1DB472B8F1119343
+            </p>
+            <p class="other-text">D42190AAD8C</p>
+          </div>
+          <div class="cards">
+            <h5>English</h5>
+
+            <a href="#" target="_blank">
+              <button class="bit32">Download 32-bit</button>
+            </a>
+
+            <a href="#" target="_blank">
+              <button class="bit64">Download 64-bit</button>
+            </a>
+
+            <p class="encryption-text">SHA256</p>
+
+            <p class="other-text">
+              3C783C0872319DE70343C2C79D9E0024FDA3F1DB472B8F1119343
+            </p>
+            <p class="other-text">D42190AAD8C</p>
+          </div>
+          <div class="cards">
+            <h5>English</h5>
+
+            <a href="#" target="_blank">
+              <button class="bit32">Download 32-bit</button>
+            </a>
+
+            <a href="#" target="_blank">
+              <button class="bit64">Download 64-bit</button>
+            </a>
+
+            <p class="encryption-text">SHA256</p>
+
+            <p class="other-text">
+              3C783C0872319DE70343C2C79D9E0024FDA3F1DB472B8F1119343
+            </p>
+            <p class="other-text">D42190AAD8C</p>
+          </div>
+          <div class="cards">
+            <h5>English</h5>
+
+            <a href="#" target="_blank">
+              <button class="bit32">Download 32-bit</button>
+            </a>
+
+            <a href="#" target="_blank">
+              <button class="bit64">Download 64-bit</button>
+            </a>
+
+            <p class="encryption-text">SHA256</p>
+
+            <p class="other-text">
+              3C783C0872319DE70343C2C79D9E0024FDA3F1DB472B8F1119343
+            </p>
+            <p class="other-text">D42190AAD8C</p>
+          </div>
+          <div class="cards">
+            <h5>English</h5>
+
+            <a href="#" target="_blank">
+              <button class="bit32">Download 32-bit</button>
+            </a>
+
+            <a href="#" target="_blank">
+              <button class="bit64">Download 64-bit</button>
+            </a>
+
+            <p class="encryption-text">SHA256</p>
+
+            <p class="other-text">
+              3C783C0872319DE70343C2C79D9E0024FDA3F1DB472B8F1119343
+            </p>
+            <p class="other-text">D42190AAD8C</p>
+          </div>
+          <div class="cards">
+            <h5>English</h5>
+
+            <a href="#" target="_blank">
+              <button class="bit32">Download 32-bit</button>
+            </a>
+
+            <a href="#" target="_blank">
+              <button class="bit64">Download 64-bit</button>
+            </a>
+
+            <p class="encryption-text">SHA256</p>
+
+            <p class="other-text">
+              3C783C0872319DE70343C2C79D9E0024FDA3F1DB472B8F1119343
+            </p>
+            <p class="other-text">D42190AAD8C</p>
+          </div>
+          <div class="cards">
+            <h5>English</h5>
+
+            <a href="#" target="_blank">
+              <button class="bit32">Download 32-bit</button>
+            </a>
+
+            <a href="#" target="_blank">
+              <button class="bit64">Download 64-bit</button>
+            </a>
+
+            <p class="encryption-text">SHA256</p>
+
+            <p class="other-text">
+              3C783C0872319DE70343C2C79D9E0024FDA3F1DB472B8F1119343
+            </p>
+            <p class="other-text">D42190AAD8C</p>
+          </div>
+          <div class="cards">
+            <h5>English</h5>
+
+            <a href="#" target="_blank">
+              <button class="bit32">Download 32-bit</button>
+            </a>
+
+            <a href="#" target="_blank">
+              <button class="bit64">Download 64-bit</button>
+            </a>
+
+            <p class="encryption-text">SHA256</p>
+
+            <p class="other-text">
+              3C783C0872319DE70343C2C79D9E0024FDA3F1DB472B8F1119343
+            </p>
+            <p class="other-text">D42190AAD8C</p>
+          </div>
+          <div class="cards grid-10">
+            <h5>English</h5>
+
+            <a href="#" target="_blank">
+              <button class="bit32">Download 32-bit</button>
+            </a>
+
+            <a href="#" target="_blank">
+              <button class="bit64">Download 64-bit</button>
+            </a>
+
+            <p class="encryption-text">SHA256</p>
+
+            <p class="other-text">
+              3C783C0872319DE70343C2C79D9E0024FDA3F1DB472B8F1119343
+            </p>
+            <p class="other-text">D42190AAD8C</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
