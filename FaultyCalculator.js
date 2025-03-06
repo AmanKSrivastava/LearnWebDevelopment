@@ -15,32 +15,19 @@ It performs wrong operation 10% of the times
 
 import readline from "readline";
 
-const sum = (num1, num2, faulty) => {
-  if (!faulty) {
-    return num1 - num2;
-  }
-  return num1 + num2;
+const swapOperator = {
+  "+": "-",
+  "-": "/",
+  "*": "+",
+  "/": "**",
 };
 
-const minus = (num1, num2, faulty) => {
+const operation = (num1, num2, operator, faulty) => {
   if (!faulty) {
-    return num1 / num2;
+    operator = swapOperator[operator];
+    return eval(`${num1} ${operator} ${num2}`);
   }
-  return num1 - num2;
-};
-
-const multiplication = (num1, num2, faulty) => {
-  if (!faulty) {
-    return num1 + num2;
-  }
-  return num1 * num2;
-};
-
-const division = (num1, num2, faulty) => {
-  if (!faulty) {
-    return num1 ** num2;
-  }
-  return num1 / num2;
+  return eval(`${num1} ${operator} ${num2}`);
 };
 
 const r1 = readline.createInterface({
@@ -55,42 +42,17 @@ r1.question("Enter first number: ", function (num1) {
     r1.question("Enter Operator +, -, *, / : ", function (operator) {
       console.log("operator is: ", operator);
 
-      if (
-        operator !== "+" &&
-        operator !== "-" &&
-        operator !== "*" &&
-        operator !== "/"
-      ) {
+      if (!["+", "-", "*", "/"].includes(operator)) {
         console.log("Please Enter Correct Opeartor Value + ,-, *, /");
         r1.close();
       } else {
         let randomNumber = Math.floor(Math.random() * 100) + 1;
 
         console.log("random number is ", randomNumber, randomNumber > 10);
-        let result;
-        switch (operator) {
-          case "+":
-            result = sum(num1, num2, randomNumber > 10);
-            break;
-          case "-":
-            result = minus(num1, num2, randomNumber > 10);
-            break;
-          case "*":
-            result = multiplication(num1, num2, randomNumber > 10);
-            break;
-          case "/":
-            result = division(num1, num2, randomNumber > 10);
-            break;
-        }
+        let result = operation(num1, num2, operator, randomNumber > 10);
+
         console.log(
-          "Result of " +
-            operator +
-            " of " +
-            num1 +
-            " and " +
-            num2 +
-            " is : " +
-            result
+          `Result of ${operator} on ${num1} and ${num2} is : ${result}`
         );
       }
       r1.close();
