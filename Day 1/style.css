@@ -4,17 +4,34 @@
 }
 .cards {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .card {
-  margin: 10px;
+  position: relative;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-color: white;
   transition: transform 0.2s;
+  animation: fadeIn 0.4s ease-in-out;
+  text-align: center;
 }
 .card:hover {
   transform: scale(1.02);
+}
+.card .fa-edit {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  color: #ece0e0;
+}
+
+.card .fa-edit:hover {
+  color: #5b0606;
+  transform: scale(1.2);
+  transition: all 0.2s ease;
 }
 .card-image {
   height: 300px;
@@ -24,7 +41,9 @@
   display: flex;
   justify-content: center;
 }
-.button button {
+.button button,
+.create-form,
+.cancel-edit {
   background-color: rgba(53, 124, 206, 0.308);
   color: black;
   padding: 15px;
@@ -37,4 +56,36 @@
 .button button:hover {
   background-color: rgba(53, 124, 206, 0.6);
   transition: background-color 0.2s;
+}
+
+#createCardForm {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.form-input {
+  margin: 10px;
+  font-size: 18px;
+}
+.hideForm {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.cancel-edit-hide {
+  display: none;
 }
