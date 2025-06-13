@@ -52,7 +52,7 @@ cancelEditButton.addEventListener("click", function () {
 addbutton.addEventListener("click", function () {
   editingCard = null;
   form.reset();
-  form.querySelector(".create-form").innerText = "Submit";
+  form.querySelector(".create-form").innerText = "Create";
   cancelEditButton.classList.add("cancel-edit-hide");
   form.classList.remove("hideForm");
   document.getElementById("name").focus();
