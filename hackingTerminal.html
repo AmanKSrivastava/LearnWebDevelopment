@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hacking Simulator</title>
+    <style>
+      body {
+        background-color: black;
+        color: #00ff00;
+        font-family: monospace;
+        font-size: 20px;
+        padding: 20px;
+      }
+      #screen {
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="screen"></div>
+
+    <script>
+      const screen = document.getElementById("screen");
+      const messages = [
+        "Initializing system",
+        "Bypassing firewall",
+        "Accessing mainframe",
+        "Downloading data",
+        "Injecting payload",
+        "Mission complete",
+      ];
+
+      let messageIndex = 0;
+
+      function showMessageWithDots(message) {
+        return new Promise((resolve) => {
+          let dotCount = 0;
+          const dotInterval = setInterval(() => {
+            dotCount = (dotCount % 3) + 1;
+            screen.innerHTML = screen.innerHTML.replace(
+              /.*$/,
+              `${message}${".".repeat(dotCount)}`
+            );
+          }, 500);
+
+          const delay = Math.random() * 6000 + 1000; // 1000–7000 ms
+
+          setTimeout(() => {
+            clearInterval(dotInterval);
+            screen.innerHTML += "\n"; // Finish line
+            resolve();
+          }, delay);
+        });
+      }
+
+      async function runSimulator() {
+        for (let msg of messages) {
+          await showMessageWithDots(msg);
+        }
+      }
+
+      runSimulator();
+    </script>
+  </body>
+</html>
