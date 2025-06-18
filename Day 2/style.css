@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.todo-app {
+  background-color: #f7ddb1;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-card {
+  margin: 20px 10px;
+  padding: 20px 10px;
+  min-height: 500px;
+  width: 400px;
+  background-color: #221b1a;
+  border: 3px solid #11268b;
+  border-radius: 15px;
+}
+.todo-title,
+.todo-list-title {
+  text-align: center;
+  color: white;
+}
+.todo-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.todo-input input[type="text"] {
+  border: none;
+  height: 40px;
+  width: 200px;
+  border-radius: 5px;
+}
+.todo-input input[type="button"] {
+  border: none;
+  height: 42px;
+  width: 70px;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 5px;
+  background-color: #2752e5;
+  cursor: pointer;
+}
+
+.todo-list {
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  padding: 0;
+}
+.todo-list-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid white;
+  color: white;
+  list-style: none;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+.todo-list-item input[type="button"] {
+  border: none;
+  background-color: #221b1a;
+  color: red;
+  cursor: pointer;
+}
+.todo-element-checked {
+  text-decoration: line-through;
+  color: gray;
+}
+hr {
+  border: 1px solid #2752e5;
+}
+.todo-status-count {
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.todo-list-item {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.todo-list-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.todo-list-item.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.todo-list-item.flash {
+  animation: flashEdit 0.4s;
+}
+
+@keyframes flashEdit {
+  0% {
+    background-color: #444;
+  }
+  50% {
+    background-color: #ffffff44;
+  }
+  100% {
+    background-color: #221b1a;
+  }
+}
