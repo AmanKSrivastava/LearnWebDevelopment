@@ -1,0 +1,42 @@
+.notepad {
+  height: 600px;
+  display: flex;
+  gap: 10px;
+}
+.inputArea,
+.outputArea {
+  height: 100%;
+  width: 50%;
+  border: 2px solid black;
+}
+.areaHeading {
+  text-align: center;
+}
+#input-text {
+  height: 85%;
+  width: 99%;
+  resize: none;
+  /* box-sizing: border-box; */
+}
+
+.outputArea {
+  position: relative;
+}
+.text-count {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.output-text p {
+  transition: all 0.2s ease;
+  font-size: 16px;
+  padding: 5px;
+}
+.output-text {
+  height: 85%;
+  width: 98%;
+  overflow-y: auto;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
